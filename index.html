@@ -81,6 +81,10 @@
         .grid-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .grid-gallery img { width: 100%; border-radius: 12px; height: auto; border: 1px solid #eee; background: #fff; }
 
+        /* LIVE DEMO BADGE STYLES */
+        .video-container { position: relative; margin-bottom: 12px; }
+        .live-badge { position: absolute; top: 10px; left: 10px; background: rgba(220, 38, 38, 0.9); color: white; padding: 4px 10px; border-radius: 50px; font-size: 10px; font-weight: 800; z-index: 10; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); backdrop-filter: blur(4px); letter-spacing: 0.5px; pointer-events: none; }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -109,7 +113,12 @@
             Strictly Limited Lahore Stock: 07 Pieces Left!
         </div>
 
-        <iframe src="https://www.youtube-nocookie.com/embed/BTLuUxsYHOw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 260px; border-radius: 16px; margin-bottom: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #eee; background: #000;"></iframe>
+        <div class="video-container">
+            <div class="live-badge">
+                <i class="fas fa-circle" style="font-size: 6px; animation: pulse 1s infinite;"></i> LIVE DEMO
+            </div>
+            <iframe src="https://www.youtube-nocookie.com/embed/BTLuUxsYHOw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 260px; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #eee; background: #000; display: block;"></iframe>
+        </div>
         <div class="benefits-section">
             <div class="benefit-tag"><i class="fas fa-bolt"></i> Optimized 2200W power-lower electricity bills</div>
             <div class="benefit-tag"><i class="fas fa-fire-alt"></i> Say goodbye to gas load-shedding.</div>
