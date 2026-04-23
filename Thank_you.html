@@ -32,10 +32,8 @@
     // Updated with your actual Pixel ID
     fbq('init', '1488498839308041'); 
     
-    // PageView and Purchase perfectly trigger when they hit this page
+    // Sirf PageView trigger hoga. Purchase event index.html k button par already laga hua hai!
     fbq('track', 'PageView');
-    // PRICE UPDATED HERE TO 7499
-    fbq('track', 'Purchase', {value: 7499.00, currency: 'PKR'}); 
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1488498839308041&ev=PageView&noscript=1"
@@ -66,11 +64,11 @@
             </div>
             <div class="flex justify-between border-b border-slate-200 pb-2 mb-3">
                 <span class="text-slate-500 font-semibold text-sm">Product:</span>
-                <span class="text-slate-900 font-bold">Ancher Plus 2200 W Hot Plate </span>
+                <span class="text-slate-900 font-bold">Ancher Plus 2200 W Hot Plate</span>
             </div>
             <div class="flex justify-between">
                 <span class="text-slate-500 font-semibold text-sm">Total Bill:</span>
-                <span id="total-price" class="text-red-600 font-extrabold">Rs 7,499</span>
+                <span id="total-price" class="text-red-600 font-extrabold">Rs 7,799</span>
             </div>
         </div>
 
@@ -118,8 +116,8 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const orderId = urlParams.get('oid') || '#HP-Internal';
-        // FALLBACK UPDATED HERE TO 7499
-        const total = urlParams.get('total') || '7499';
+        // FALLBACK UPDATED HERE TO 7799
+        const total = urlParams.get('total') || '7799';
 
         const formattedTotal = Number(total).toLocaleString('en-US');
 
