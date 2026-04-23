@@ -16,6 +16,14 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1488498839308041'); 
     fbq('track', 'PageView');
+
+    // CUSTOM VIEW CONTENT EVENT FOR ANCHER PLUS (Price Updated)
+    fbq('track', 'ViewContent', {
+        content_name: 'Ancher Plus Hot Plate',
+        content_category: 'Kitchen Appliances',
+        value: 7799.00,
+        currency: 'PKR'
+    });
     </script>
 
     <script type="text/javascript">
@@ -168,9 +176,9 @@
 
         <div class="pricing-card">
             <div style="display: flex; align-items: baseline;">
-                <span class="new-price">Rs 7,499</span>
+                <span class="new-price">Rs 7,799</span>
                 <span class="old-price">Rs 10,000</span>
-                <span style="background:var(--primary); color:white; font-size:11px; padding:3px 8px; border-radius:6px; font-weight:800; margin-left:auto;">25% OFF</span>
+                <span style="background:var(--primary); color:white; font-size:11px; padding:3px 8px; border-radius:6px; font-weight:800; margin-left:auto;">22% OFF</span>
             </div>
             <div class="delivery-highlight">
                 <i class="fas fa-truck-moving"></i>
@@ -181,8 +189,6 @@
         <div class="order-box" id="order-section">
             <h2>Order Details (Pay on Delivery)</h2>
             
-            
-
             <form id="orderForm">
                 <div class="input-group">
                     <i class="fas fa-user"></i>
@@ -215,7 +221,8 @@
 <a href="https://wa.me/923426881848" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    const currentPrice = 7499; 
+    // PRICE UPDATED HERE
+    const currentPrice = 7799; 
 
     function startTimer(duration, display) {
         let timer = duration, hours, minutes, seconds;
@@ -243,12 +250,19 @@
             "name": document.getElementById('cust_name').value,
             "phone": document.getElementById('cust_phone').value,
             "address": document.getElementById('cust_address').value,
-            "product": "Imported Ancher Plus (7499)",
+            "product": "Imported Ancher Plus (7799)", // SHEETDB ENTRY UPDATED
             "total_bill": "Rs " + currentPrice,
             "timestamp": new Date().toLocaleString('en-PK')
         };
 
         try {
+            // CUSTOM PURCHASE EVENT FOR ANCHER PLUS (Uses currentPrice)
+            fbq('track', 'Purchase', {
+                content_name: 'Ancher Plus Hot Plate',
+                value: currentPrice,
+                currency: 'PKR'
+            });
+
             await fetch('https://sheetdb.io/api/v1/fud286kh3rn9s', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
